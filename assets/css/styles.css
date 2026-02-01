@@ -1,3 +1,322 @@
-:root{
-    font-family: Arial, Helvetica, sans-serif;
+/* =======================
+   ROOT VARIABLES
+======================= */
+:root {
+    --pink: #ee86ae;
+    --black: #181818;
+    --lightpink: #f3e8ee;
+    --white: #fff;
+    --darkbrand: #181818;
+}
+
+/* =======================
+   BODY & TYPOGRAPHY
+======================= */
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: var(--darkbrand);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Baskerville", "Libre Baskerville", "Georgia", "Times New Roman", serif;
+}
+
+p,
+li {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* =======================
+   Navbar Custom Colors
+======================= */
+.navbar-custom {
+    background-color: var(--pink) !important;
+    /* pink background */
+}
+
+.navbar-custom .navbar-brand {
+    color: var(--black) !important;
+    /* black text for brand */
+    font-family: "Baskerville", "Libre Baskerville", Georgia, Times New Roman, serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-custom .nav-link {
+    color: var(--black) !important;
+    /* black links */
+    font-family: "Helvetica", Arial, sans-serif;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--white) !important;
+    /* hover color */
+}
+
+/* Mobile toggler icon color */
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath stroke='rgb(24,24,24)' stroke-width='2'stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22' / %3E%3C/svg%3E");
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.hero {
+    position: relative;
+    background-image: url('../images/hero.jpg');
+    /* adjust path */
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* text after hero */
+.serif-text,
+.serif-text p,
+.serif-text ul li {
+    font-family: "Baskerville", "Libre Baskerville", "Georgia", "Times New Roman", serif;
+}
+
+/* Dark overlay and grayscale */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+/* Optional tint or brightness */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Hero text */
+.hero-text {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hero heading */
+.hero-text h1 {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 2.5rem;
+    /* mobile */
+}
+
+/* Hero subtext */
+.hero-text p {
+    color: var(--pink);
+    font-size: 1.25rem;
+    /* mobile */
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .hero-text h1 {
+        font-size: 5rem;
+    }
+
+    .hero-text p {
+        font-size: 2rem;
+    }
+}
+
+/* =======================
+   BUTTONS
+======================= */
+.btn-pink {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+    background-color: var(--lightpink);
+    color: var(--black);
+}
+
+.btn-black {
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-black:hover {
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+/* =======================
+   CARDS & SECTIONS
+======================= */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+/* Background utility classes */
+.bg-black {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+}
+
+.bg-pink {
+    background-color: var(--pink) !important;
+    color: var(--black) !important;
+}
+
+.bg-lightpink {
+    background-color: var(--lightpink) !important;
+    color: var(--black) !important;
+}
+
+.bg-white {
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+}
+
+/* Checkmark list styling */
+ul.checkmark {
+    list-style: none;
+    padding-left: 2rem;
+    margin: 0;
+}
+
+ul.checkmark li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+ul.checkmark li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+    font-weight: bold;
+}
+
+/* Optional: vertically center UL in its column (already using flex in HTML) */
+.col-12.col-md-6.bg-pink {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =======================
+   ACCORDION
+======================= */
+.accordion-button {
+    font-weight: bold;
+}
+
+.accordion-body {
+    font-weight: normal;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 3rem 1rem;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--pink);
+}
+
+/* =======================
+   RESPONSIVE FONT SIZES
+======================= */
+.fs-5 {
+    font-size: 1.25rem;
+}
+
+.fs-4 {
+    font-size: 1.5rem;
+}
+
+.fs-3 {
+    font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+    .fs-md-5 {
+        font-size: 1.5rem;
+    }
+
+    .fs-md-4 {
+        font-size: 1.75rem;
+    }
+
+    .fs-md-3 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fs-lg-5 {
+        font-size: 1.75rem;
+    }
+
+    .fs-lg-4 {
+        font-size: 2rem;
+    }
+
+    .fs-lg-3 {
+        font-size: 2.25rem;
+    }
 }
