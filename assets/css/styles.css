@@ -35,6 +35,40 @@ li {
 }
 
 /* =======================
+   Navbar Custom Colors
+======================= */
+.navbar-custom {
+    background-color: var(--pink) !important;
+    /* pink background */
+}
+
+.navbar-custom .navbar-brand {
+    color: var(--black) !important;
+    /* black text for brand */
+    font-family: "Baskerville", "Libre Baskerville", Georgia, Times New Roman, serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-custom .nav-link {
+    color: var(--black) !important;
+    /* black links */
+    font-family: "Helvetica", Arial, sans-serif;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--white) !important;
+    /* hover color */
+}
+
+/* Mobile toggler icon color */
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath stroke='rgb(24,24,24)' stroke-width='2'stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22' / %3E%3C/svg%3E");
+}
+
+/* =======================
    HERO SECTION
 ======================= */
 .hero {
